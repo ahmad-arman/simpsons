@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/favorite-quotes">Favor character</a>
+        
+        </nav>
+    </header>
+    <main>
+        <% myData.forEach(element=>{ %>
+           <h1> <b><%= element.character %> </b></h1> 
+           <p><%= element.quote %></p>
+           <img src="<%= element.image %>" alt="">
+           <form action="/save" method="POST">
+               <input type="hidden"  name="character" value="<%= element.character %>">
+               <input type="hidden"  name="quote" value="<%= element.quote %>">
+               <input type="hidden"  name="image" value="<%= element.image %>">
+               <button>Favor character</button>
+           </form>
+
+       <% }) %> 
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/save">Favor character</a>
+        
+        </nav>
+    </header>
+    <main>
+      
+           <h1> <b><%= myData.character %> </b></h1> 
+           <p><%= myData.quote %></p>
+           <img src="<%= myData.image %>" alt="">
+
+           <button id="btn">update</button>
+           <form action="/update/<%= myData.id %> ?_method=put " id="form" method="POST">
+            <input type="hidden"  name="character" value="<%= myData.character %>">
+            <input type="test"  name="quote" value="<%= myData.quote %>">
+            <input type="hidden"  name="image" value="<%= myData.image %>">
+            <button>update quote </button>
+        </form>
+        <form action="/delete/<%= myData.id %> ?_method=delete" method="POST">
+            <button>delete quote</button>
+        </form>
+
+      
+    </main>
+    <footer></footer>
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+   <script src="/js/app.js"></script>
+    
+</body>
+</html>
